@@ -41,6 +41,8 @@ public class Ordenacao{
 
             case 2: selecao(); break;
 
+            case 5: quicksort(); break;
+
             default: System.out.println("ERRO NO PROCESSAMENTO");
             break;
         }
@@ -51,7 +53,7 @@ public class Ordenacao{
         
         this.array = insercao.insercao(this.array);
 
-        System.out.println("Array ordenado pelo algoritmo de Inserção");
+        System.out.println("Array ordenado pelo algoritmo Inserção");
         printArray();
     }
 
@@ -60,7 +62,16 @@ public class Ordenacao{
         
         this.array = selecao.selecao(this.array);
 
-        System.out.println("Array ordenado pelo algoritmo de Seleção");
+        System.out.println("Array ordenado pelo algoritmo Seleção");
+        printArray();
+    }
+
+    public void quicksort(){
+        Quicksort quicksort = new Quicksort();
+        
+        this.array = quicksort.quicksort(this.array);
+
+        System.out.println("Array ordenado pelo algoritmo Quicksort");
         printArray();
     }
 }
