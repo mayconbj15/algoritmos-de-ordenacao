@@ -1,3 +1,9 @@
+/**
+ * Classe que implementada o algoritmo de ordenação seleção
+ * Implementação para inteiros
+ * @author Maycon Bruno de Jesus
+ */
+
 public class Quicksort{
     /**
 	 * Algoritmo de ordenacao Quicksort.

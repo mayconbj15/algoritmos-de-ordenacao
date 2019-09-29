@@ -1,6 +1,6 @@
 /**
  * Classe que implementada o algoritmo de ordenação seleção
- * Implementação para inteiros e para a classe Instituição
+ * Implementação para inteiros
  * @author Maycon Bruno de Jesus
  */
 

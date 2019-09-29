@@ -41,6 +41,8 @@ public class Ordenacao{
 
             case 2: selecao(); break;
 
+            case 3: shellsort(); break;
+
             case 5: quicksort(); break;
 
             default: System.out.println("ERRO NO PROCESSAMENTO");
@@ -72,6 +74,15 @@ public class Ordenacao{
         this.array = quicksort.quicksort(this.array);
 
         System.out.println("Array ordenado pelo algoritmo Quicksort");
+        printArray();
+    }
+
+    public void shellsort(){
+        Shellsort shellsort = new Shellsort();
+        
+        this.array = shellsort.shellsort(this.array);
+
+        System.out.println("Array ordenado pelo algoritmo shellsort");
         printArray();
     }
 }
