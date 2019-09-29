@@ -51,6 +51,8 @@ public class Ordenacao{
 
             case 7: mergesort(); break;
 
+            case 8: radixsort(); break;
+
             default: System.out.println("ERRO NO PROCESSAMENTO"); break;
         }
     }
@@ -115,6 +117,15 @@ public class Ordenacao{
         this.array = mergesort.mergesort(this.array);
 
         System.out.println("Array ordenado pelo algoritmo merge sort");
+        printArray();
+    }
+
+    public void radixsort(){
+        Radixsort radixsort = new Radixsort();
+        
+        this.array = radixsort.radixsort(this.array);
+
+        System.out.println("Array ordenado pelo algoritmo radix sort");
         printArray();
     }
 }
