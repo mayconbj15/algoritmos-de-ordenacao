@@ -49,8 +49,9 @@ public class Ordenacao{
 
             case 6: bubblesort(); break;
 
-            default: System.out.println("ERRO NO PROCESSAMENTO");
-            break;
+            case 7: mergesort(); break;
+
+            default: System.out.println("ERRO NO PROCESSAMENTO"); break;
         }
     }
 
@@ -105,6 +106,15 @@ public class Ordenacao{
         this.array = bubblesort.bubblesort(this.array);
 
         System.out.println("Array ordenado pelo algoritmo bubble sort");
+        printArray();
+    }
+
+    public void mergesort(){
+        Mergesort mergesort = new Mergesort();
+        
+        this.array = mergesort.mergesort(this.array);
+
+        System.out.println("Array ordenado pelo algoritmo merge sort");
         printArray();
     }
 }
