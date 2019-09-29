@@ -11,3 +11,7 @@ Neste repositório coloco todos os algoritmos de ordenação que fiz durante a d
 - Bubble sort
 - Merge sort
 - Radix sort
+
+## Futuras melhorias
+- Ordenar outros tipos de dados
+- Criar as versões didatícas para mostrar cada passo da ordenação
