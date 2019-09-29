@@ -43,7 +43,11 @@ public class Ordenacao{
 
             case 3: shellsort(); break;
 
+            case 4: heapsort(); break;
+
             case 5: quicksort(); break;
+
+            
 
             default: System.out.println("ERRO NO PROCESSAMENTO");
             break;
@@ -83,6 +87,15 @@ public class Ordenacao{
         this.array = shellsort.shellsort(this.array);
 
         System.out.println("Array ordenado pelo algoritmo shellsort");
+        printArray();
+    }
+
+    public void heapsort(){
+        Heapsort heapsort = new Heapsort();
+        
+        this.array = heapsort.heapsort(this.array);
+
+        System.out.println("Array ordenado pelo algoritmo heapsort");
         printArray();
     }
 }
