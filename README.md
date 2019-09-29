@@ -15,3 +15,6 @@ Neste repositório coloco todos os algoritmos de ordenação que fiz durante a d
 ## Futuras melhorias
 - Ordenar outros tipos de dados
 - Criar as versões didatícas para mostrar cada passo da ordenação
+- Implementar os mesmos algoritmos em outras linguages
+
+Se quiser ajudar fique a vontade para abrir uma Issue
