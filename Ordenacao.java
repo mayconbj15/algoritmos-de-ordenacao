@@ -47,7 +47,7 @@ public class Ordenacao{
 
             case 5: quicksort(); break;
 
-            
+            case 6: bubblesort(); break;
 
             default: System.out.println("ERRO NO PROCESSAMENTO");
             break;
@@ -96,6 +96,15 @@ public class Ordenacao{
         this.array = heapsort.heapsort(this.array);
 
         System.out.println("Array ordenado pelo algoritmo heapsort");
+        printArray();
+    }
+
+    public void bubblesort(){
+        Bubblesort bubblesort = new Bubblesort();
+        
+        this.array = bubblesort.bubblesort(this.array);
+
+        System.out.println("Array ordenado pelo algoritmo bubble sort");
         printArray();
     }
 }

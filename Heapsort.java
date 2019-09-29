@@ -1,3 +1,9 @@
+/**
+ * Classe que implementada o algoritmo de ordenação heapsort
+ * Implementação para inteiros
+ * @author Maycon Bruno de Jesus
+ */
+
 public class Heapsort{
     public int[] heapsort(int[] array) {
         //Alterar o vetor ignorando a posicao zero

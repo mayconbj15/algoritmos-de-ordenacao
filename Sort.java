@@ -16,7 +16,7 @@ public class Sort{
                             "3 - Shellsort\n" + 
                             "4 - Heapsort\n" + 
                             "5 - Quicksort\n" +                           
-                            "6 - Bubble sort" +
+                            "6 - Bubble sort\n" +
                             "7 - Merge sort\n" +
                             "8 - Radix sort\n");
         tipoAlgoritmo = input.nextInt();
