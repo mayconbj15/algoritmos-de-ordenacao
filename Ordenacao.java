@@ -37,8 +37,9 @@ public class Ordenacao{
      */
     public void ordenar(){
         switch(this.tipoAlgoritmo){
-            case 1: insercao();
-            break;
+            case 1: insercao(); break;
+
+            case 2: selecao(); break;
 
             default: System.out.println("ERRO NO PROCESSAMENTO");
             break;
@@ -51,6 +52,15 @@ public class Ordenacao{
         this.array = insercao.insercao(this.array);
 
         System.out.println("Array ordenado pelo algoritmo de Inserção");
+        printArray();
+    }
+
+    public void selecao(){
+        Selecao selecao = new Selecao();
+        
+        this.array = selecao.selecao(this.array);
+
+        System.out.println("Array ordenado pelo algoritmo de Seleção");
         printArray();
     }
 }
