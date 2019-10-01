@@ -1,3 +1,5 @@
+package ordenacao.algoritmos;
+
 /**
  * Classe que implementada o algoritmo de ordenação bubble sort
  * Implementação para inteiros

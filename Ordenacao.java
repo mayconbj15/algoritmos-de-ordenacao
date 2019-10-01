@@ -1,5 +1,9 @@
+package ordenacao;
+
 import java.util.Scanner;
 import java.util.Random;
+
+import ordenacao.algoritmos.Shellsort;
 
 public class Ordenacao{
     private int tipoAlgoritmo;
@@ -65,7 +69,7 @@ public class Ordenacao{
         System.out.println("Array ordenado pelo algoritmo Inserção");
         printArray();
     }
-
+    
     public void selecao(){
         Selecao selecao = new Selecao();
         

@@ -1,2 +1,5 @@
-#para os arquivos compilados do Java
+#para os arquivos compilados do programa principal
 *.class
+
+#para os arquivos compilados dos algoritmos
+.\ordenacao\*.class

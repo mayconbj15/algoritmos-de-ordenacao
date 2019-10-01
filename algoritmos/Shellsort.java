@@ -1,3 +1,11 @@
+package ordenacao.algoritmos;
+
+/**
+ * Classe que implementada o algoritmo de ordenação seleção
+ * Implementação para inteiros
+ * @author Maycon Bruno de Jesus
+ */
+
 public class Shellsort{
     /**
     * Algoritmo de ordenacao Shellsort.

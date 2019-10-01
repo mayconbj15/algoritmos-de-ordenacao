@@ -1,3 +1,11 @@
+package ordenacao.algoritmos;
+
+/**
+ * Classe que implementada o algoritmo de ordenação Radix sort
+ * Implementação para inteiros
+ * @author Maycon Bruno de Jesus
+ */
+
 public class Radixsort{
     // A function to do counting sort of arr[] according to
     // the digit represented by exp.

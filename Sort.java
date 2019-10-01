@@ -1,4 +1,8 @@
+package ordenacao;
+
 import java.util.Scanner;
+
+import ordenacao.algoritmos.*;
 
 public class Sort{
     public static void main(String[] args){
