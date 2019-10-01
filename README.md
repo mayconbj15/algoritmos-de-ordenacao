@@ -7,7 +7,6 @@ Neste repositório coloco todos os algoritmos de ordenação que fiz durante a d
 - Shellsort
 - Heapsort
 - Quicksort
-- Counting sort
 - Bubble sort
 - Merge sort
 - Radix sort
