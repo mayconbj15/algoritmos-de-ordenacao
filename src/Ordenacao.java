@@ -1,9 +1,6 @@
-package ordenacao;
-
-import java.util.Scanner;
 import java.util.Random;
 
-import ordenacao.algoritmos.Shellsort;
+import algoritmos.*;
 
 public class Ordenacao{
     private int tipoAlgoritmo;

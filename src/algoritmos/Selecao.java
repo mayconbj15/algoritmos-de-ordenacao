@@ -1,4 +1,4 @@
-package ordenacao.algoritmos;
+package algoritmos;
 
 /**
  * Classe que implementada o algoritmo de ordenação seleção
@@ -6,7 +6,7 @@ package ordenacao.algoritmos;
  * @author Maycon Bruno de Jesus
  */
 
-public class Selecao{
+public class Selecao<DADO extends Comparable<DADO>> implements AlgoritmoDeOrdenacao<DADO> {
     /**
     * Algoritmo de ordenacao por seleção para um array de inteiros
     */

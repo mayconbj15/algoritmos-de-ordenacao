@@ -1,4 +1,4 @@
-package ordenacao.algoritmos;
+package algoritmos;
 
 /**
  * Classe que implementada o algoritmo de ordenação seleção
@@ -6,7 +6,7 @@ package ordenacao.algoritmos;
  * @author Maycon Bruno de Jesus
  */
 
-public class Shellsort{
+public class Shellsort<DADO extends Comparable<DADO>> implements AlgoritmoDeOrdenacao<DADO> {
     /**
     * Algoritmo de ordenacao Shellsort.
     */

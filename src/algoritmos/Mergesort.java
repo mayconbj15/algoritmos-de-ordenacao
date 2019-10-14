@@ -1,4 +1,4 @@
-package ordenacao.algoritmos;
+package algoritmos;
 
 /**
  * Classe que implementada o algoritmo de ordenação bubble sort
@@ -6,7 +6,7 @@ package ordenacao.algoritmos;
  * @author Maycon Bruno de Jesus
  */
 
-public class Mergesort{    
+public class Mergesort<DADO extends Comparable<DADO>> implements AlgoritmoDeOrdenacao<DADO> {
     /**
      * Concatena um array de instituição em dois subarray de instituições
      * @param array array que irá geras os dois subarrays

@@ -1,4 +1,4 @@
-package ordenacao.algoritmos;
+package algoritmos;
 
 /**
  * Classe que implementada o algoritmo de ordenação Radix sort
@@ -6,7 +6,7 @@ package ordenacao.algoritmos;
  * @author Maycon Bruno de Jesus
  */
 
-public class Radixsort{
+public class Radixsort<DADO extends Comparable<DADO>> implements AlgoritmoDeOrdenacao<DADO> {
     // A function to do counting sort of arr[] according to
     // the digit represented by exp.
     public int[] countSort(int[] array, int exp){

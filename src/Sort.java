@@ -1,5 +1,3 @@
-package ordenacao;
-
 import java.util.Scanner;
 
 import ordenacao.algoritmos.*;

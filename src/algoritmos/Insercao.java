@@ -1,4 +1,4 @@
-package ordenacao.algoritmos;
+package algoritmos;
 
 /**
  * Classe que implementada o algoritmo de ordenação inserção
@@ -6,7 +6,7 @@ package ordenacao.algoritmos;
  * @author Maycon Bruno de Jesus
  */
 
-public class Insercao{
+public class Insercao<DADO extends Comparable<DADO>> implements AlgoritmoDeOrdenacao<DADO> {
     public int[] insercao(int[] array){
         for (int i = 1; i < array.length; i++) {
 			int tmp = array[i]; 

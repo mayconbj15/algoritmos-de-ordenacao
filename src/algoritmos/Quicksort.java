@@ -1,4 +1,4 @@
-package ordenacao.algoritmos;
+package algoritmos;
 
 /**
  * Classe que implementada o algoritmo de ordenação seleção
@@ -7,7 +7,7 @@ package ordenacao.algoritmos;
  */
 
 
-public class Quicksort{
+public class Quicksort<DADO extends Comparable<DADO>> implements AlgoritmoDeOrdenacao<DADO> {
     /**
 	 * Algoritmo de ordenacao Quicksort.
 	 */
