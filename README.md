@@ -24,9 +24,9 @@ Se quiser ajudar fique a vontade para abrir uma Issue.
 Segue a série de comandos:
 
 ```shell script
+powershell && REM Ignore esta linha caso esteja num sistema UNIX.
 git clone https://github.com/axell-brendow/algoritmos-de-ordenacao
-pushd algoritmos-de-ordenacao
-pushd src
+pushd algoritmos-de-ordenacao/src
 javac -classpath . Sort.java # Arquivo principal
 java -classpath . Sort --noprint # --noprint faz com que os arranjos ordenados não sejam printados
 

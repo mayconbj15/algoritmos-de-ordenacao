@@ -30,6 +30,8 @@ public class Sort{
         int quantidadeDeDados;
         int tipoEntrada;
 
+        lerArgumentos(args);
+
         System.out.println("BEM VINDO AO MUNDO DA ORDENAÇÃO\n" + 
                             "AQUI VOCÊ TERA MUITOS ALGORITMOS DE ORDENAÇÃO PARA ESCOLHER\n\n");
                             
