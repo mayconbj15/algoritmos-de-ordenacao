@@ -20,8 +20,8 @@ public class Mergesort  implements AlgoritmoDeOrdenacao{
         int n2 = r - m; //tamanho do array da direita
   
         /* Cria array temporários */
-        DADO[] L = (DADO[]) new Object[n1];
-        DADO[] R = (DADO[]) new Object[n2];
+        DADO[] L = (DADO[]) new Comparable[n1];
+        DADO[] R = (DADO[]) new Comparable[n2];
   
         /* Copia os dados para os array temporários */
         for (int i=0; i<n1; ++i) 

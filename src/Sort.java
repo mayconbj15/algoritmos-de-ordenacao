@@ -1,6 +1,19 @@
+import algoritmos.*;
+
 import java.util.Scanner;
 
 public class Sort{
+    public static AlgoritmoDeOrdenacao[] algoritmos = new AlgoritmoDeOrdenacao[]{
+        new Insercao(),
+        new Selecao(),
+        new Shellsort(),
+        new Heapsort(),
+        new Quicksort(),
+        new Bubblesort(),
+        new Mergesort(),
+        new Radixsort(),
+    };
+
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
         int tipoAlgoritmo;
@@ -22,14 +35,16 @@ public class Sort{
         tipoAlgoritmo = input.nextInt();
 
         System.out.println("Como deseja gerar os dados?\n");
-        System.out.println( "1 - Aleatório\n" +  
+        System.out.println( "1 - Aleatório\n" +
                             "2 - Inseridos um a um\n");
         tipoEntrada = input.nextInt();
 
         System.out.println("Quantos dados deseja que seu vetor tenha?\n");
         quantidadeDeDados = input.nextInt();
 
-        Ordenacao ordenacao = new Ordenacao(tipoAlgoritmo, quantidadeDeDados);
+        Ordenacao ordenacao = new Ordenacao(
+            algoritmos[tipoAlgoritmo - 1], quantidadeDeDados, tipoEntrada);
+
         ordenacao.ordenar();
 
         input.close();

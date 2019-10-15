@@ -9,7 +9,7 @@ package algoritmos;
 public class Heapsort implements AlgoritmoDeOrdenacao{
     public <DADO extends Comparable<DADO>> DADO[] heapsort(DADO[] array) {
         //Alterar o vetor ignorando a posicao zero
-        DADO[] tmp = (DADO[]) new Object[array.length+1];
+        DADO[] tmp = (DADO[]) new Comparable[array.length+1];
         for(int i = 0; i < array.length; i++){
             tmp[i+1] = array[i];
         }
@@ -29,7 +29,7 @@ public class Heapsort implements AlgoritmoDeOrdenacao{
 
         //Alterar o vetor para voltar a posicao zero
         tmp = array;
-        array = (DADO[]) new Object[array.length-1];
+        array = (DADO[]) new Comparable[array.length-1];
         for(int i = 0; i < array.length; i++){
             array[i] = tmp[i+1];
         }
@@ -75,6 +75,8 @@ public class Heapsort implements AlgoritmoDeOrdenacao{
     @Override
     public <DADO extends Comparable<DADO>> void ordenar(DADO[] array)
     {
-        heapsort(array);
+        DADO[] dados = heapsort(array);
+
+        System.arraycopy(dados, 0, array, 0, array.length);
     }
 }

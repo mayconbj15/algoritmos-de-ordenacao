@@ -27,7 +27,6 @@ public class Shellsort  implements AlgoritmoDeOrdenacao{
         return array;
     }
 
-
     /**
      * Metodo que efetua a insercao nos pseudo-arrays do Shellsort.
      * @param cor cor do pseudo array.
@@ -47,7 +46,6 @@ public class Shellsort  implements AlgoritmoDeOrdenacao{
 
         return array;
     }
-
 
     @Override
     public <DADO extends Comparable<DADO>> void ordenar(DADO[] array)
