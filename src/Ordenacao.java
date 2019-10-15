@@ -77,11 +77,14 @@ public class Ordenacao
 
     public void printArray()
     {
-        for (int var : this.array)
+        if (Sort.print)
         {
-            System.out.print(var + " ");
+            for (int var : this.array)
+            {
+                System.out.print(var + " ");
+            }
+            System.out.println("\n\n");
         }
-        System.out.println("\n\n");
     }
 
     private static long medirTempo(Runnable funcao)
