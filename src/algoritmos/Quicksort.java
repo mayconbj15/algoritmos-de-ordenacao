@@ -7,31 +7,31 @@ package algoritmos;
  */
 
 
-public class Quicksort<DADO extends Comparable<DADO>> implements AlgoritmoDeOrdenacao<DADO> {
+public class Quicksort  implements AlgoritmoDeOrdenacao{
     /**
-	 * Algoritmo de ordenacao Quicksort.
-	 */
-	public int[] quicksort(int[] array) {
+     * Algoritmo de ordenacao Quicksort.
+     */
+    public <DADO extends Comparable<DADO>> DADO[] quicksort(DADO[] array) {
         return quicksort(0, array.length-1, array);
-     }
-  
-      /**
-       * Algoritmo de ordenacao Quicksort de acordo com o nome.
-      * @param int esq inicio do array a ser ordenado
-      * @param int dir fim do array a ser ordenado
-       */
-    private int[] quicksort(int esq, int dir, int[] array) {
+    }
+
+    /**
+     * Algoritmo de ordenacao Quicksort de acordo com o nome.
+     * @param esq inicio do array a ser ordenado
+     * @param dir fim do array a ser ordenado
+     */
+    private <DADO extends Comparable<DADO>> DADO[] quicksort(int esq, int dir, DADO[] array) {
         int i = esq, j = dir;
-        int pivo = array[(dir+esq)/2]; //pega a posição do pivo
-        
+        DADO pivo = array[(dir+esq)/2]; //pega a posição do pivo
+
         while (i <= j) {
-            while (array[i] < pivo){
-            i++;
-            } 
-            
-            while (array[j] > pivo ){
-            j--;
-            } 
+            while (array[i].compareTo(pivo) < 0){
+                i++;
+            }
+
+            while (array[j].compareTo(pivo) > 0){
+                j--;
+            }
 
             if (i <= j) {
                 swap(i, j, array);
@@ -40,19 +40,24 @@ public class Quicksort<DADO extends Comparable<DADO>> implements AlgoritmoDeOrde
             }
         }
         if (esq < j) {
-        array = quicksort(esq, j, array);
-        } 
+            array = quicksort(esq, j, array);
+        }
         if (i < dir) {
-        array = quicksort(i, dir, array);
-        } 
+            array = quicksort(i, dir, array);
+        }
 
         return array;
     }
 
-    public void swap(int i, int j, int[] array) {
-        int temp = array[i];
+    public <DADO extends Comparable<DADO>> void swap(int i, int j, DADO[] array) {
+        DADO temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
 
+    @Override
+    public <DADO extends Comparable<DADO>> void ordenar(DADO[] array)
+    {
+        quicksort(array);
+    }
 }

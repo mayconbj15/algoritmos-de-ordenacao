@@ -6,8 +6,8 @@ package algoritmos;
  * @author Maycon Bruno de Jesus
  */
 
-public class Heapsort<DADO extends Comparable<DADO>> implements AlgoritmoDeOrdenacao<DADO> {
-    public DADO[] heapsort(DADO[] array) {
+public class Heapsort implements AlgoritmoDeOrdenacao{
+    public <DADO extends Comparable<DADO>> DADO[] heapsort(DADO[] array) {
         //Alterar o vetor ignorando a posicao zero
         DADO[] tmp = (DADO[]) new Object[array.length+1];
         for(int i = 0; i < array.length; i++){
@@ -37,7 +37,7 @@ public class Heapsort<DADO extends Comparable<DADO>> implements AlgoritmoDeOrden
         return array;
     } //fim de heapsort
 
-    public DADO[] constroi(int tamHeap, DADO[] tmp){
+    public <DADO extends Comparable<DADO>> DADO[] constroi(int tamHeap, DADO[] tmp){
         for(int i = tamHeap; i > 1 && tmp[i].compareTo(tmp[i/2]) > 0; i /= 2){
             swap(i, i/2, tmp);
         }
@@ -45,7 +45,7 @@ public class Heapsort<DADO extends Comparable<DADO>> implements AlgoritmoDeOrden
         return tmp;
     }
   
-    public DADO[] reconstroi(int tamHeap, DADO[] array){
+    public <DADO extends Comparable<DADO>> DADO[] reconstroi(int tamHeap, DADO[] array){
         int i = 1, filho;
         
         while(i <= (tamHeap/2)){
@@ -66,14 +66,14 @@ public class Heapsort<DADO extends Comparable<DADO>> implements AlgoritmoDeOrden
         return array;
     }
 
-    public void swap(int i, int j, DADO[] array) {
+    public <DADO extends Comparable<DADO>> void swap(int i, int j, DADO[] array) {
         DADO temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
 
     @Override
-    public void ordenar(DADO[] array)
+    public <DADO extends Comparable<DADO>> void ordenar(DADO[] array)
     {
         heapsort(array);
     }

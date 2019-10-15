@@ -6,7 +6,7 @@ package algoritmos;
  * @author Maycon Bruno de Jesus
  */
 
-public class Mergesort<DADO extends Comparable<DADO>> implements AlgoritmoDeOrdenacao<DADO> {
+public class Mergesort  implements AlgoritmoDeOrdenacao{
     /**
      * Concatena um array de instituição em dois subarray de instituições
      * @param array array que irá geras os dois subarrays
@@ -14,14 +14,14 @@ public class Mergesort<DADO extends Comparable<DADO>> implements AlgoritmoDeOrde
      * @param m - meio do array de instituição
      * @param r - valor do lado direito do array de instituição 
      */
-    private int[] merge(int array[], int l, int m, int r){ 
+    private <DADO extends Comparable<DADO>> DADO[] merge(DADO array[], int l, int m, int r){
         /* Encontra o tamanho dos array que serão concatenados */
         int n1 = m - l + 1; //tamanho do array da esquerda
         int n2 = r - m; //tamanho do array da direita
   
         /* Cria array temporários */
-        int[] L = new int[n1]; 
-        int[] R = new int[n2]; 
+        DADO[] L = (DADO[]) new Object[n1];
+        DADO[] R = (DADO[]) new Object[n2];
   
         /* Copia os dados para os array temporários */
         for (int i=0; i<n1; ++i) 
@@ -38,7 +38,7 @@ public class Mergesort<DADO extends Comparable<DADO>> implements AlgoritmoDeOrde
         // Posição inicial do array que será concatenado
         int k = l; 
         while (i < n1 && j < n2){ 
-            if (L[i] < R[j]){ 
+            if (L[i].compareTo(R[j]) < 0){
                 array[k] = L[i]; 
                 i++; 
             } 
@@ -69,7 +69,7 @@ public class Mergesort<DADO extends Comparable<DADO>> implements AlgoritmoDeOrde
   
     // Main function that sorts arr[l..r] using 
     // merge() 
-    private int[] mergesortRec(int array[], int l, int r) { 
+    private <DADO extends Comparable<DADO>> DADO[] mergesortRec(DADO array[], int l, int r) {
         if (l < r){ 
             // Find the middle point 
             int m = (l+r)/2; 
@@ -85,7 +85,13 @@ public class Mergesort<DADO extends Comparable<DADO>> implements AlgoritmoDeOrde
         return array;
     }
     
-    public int[] mergesort(int[] array){
+    public <DADO extends Comparable<DADO>> DADO[] mergesort(DADO[] array){
        return mergesortRec(array,0,array.length-1); 
+    }
+
+    @Override
+    public <DADO extends Comparable<DADO>> void ordenar(DADO[] array)
+    {
+        mergesort(array);
     }
 }

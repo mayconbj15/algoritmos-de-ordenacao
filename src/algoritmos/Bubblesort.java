@@ -4,15 +4,14 @@ package algoritmos;
  * Classe que implementada o algoritmo de ordenação bubble sort
  * Implementação para inteiros
  * @author Maycon Bruno de Jesus
- * @author Axell Brendow ( https://github.com/axell-brendow )
  */
 
-public class Bubblesort<DADO extends Comparable<DADO>> implements AlgoritmoDeOrdenacao<DADO> {
-    public DADO[] bubblesort(DADO[] array){
+public class Bubblesort  implements AlgoritmoDeOrdenacao{
+    public <DADO extends Comparable<DADO>> DADO[] bubblesort(DADO[] array){
         return bubblesort(array.length, array);
     }
     
-    public DADO[] bubblesort(int tam, DADO[] array){
+    public <DADO extends Comparable<DADO>> DADO[] bubblesort(int tam, DADO[] array){
         if(tam > 0){
             for(int i=0; i < array.length-1; i++){
                 if(array[i+1].compareTo(array[i]) < 0){
@@ -25,14 +24,14 @@ public class Bubblesort<DADO extends Comparable<DADO>> implements AlgoritmoDeOrd
         return array;
     }
 
-    public void swap(int i, int j, DADO[] array) {
+    public <DADO extends Comparable<DADO>> void swap(int i, int j, DADO[] array) {
         DADO temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
 
     @Override
-    public void ordenar(DADO[] array)
+    public <DADO extends Comparable<DADO>> void ordenar(DADO[] array)
     {
         bubblesort(array);
     }

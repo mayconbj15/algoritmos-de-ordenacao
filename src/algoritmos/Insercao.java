@@ -6,21 +6,26 @@ package algoritmos;
  * @author Maycon Bruno de Jesus
  */
 
-public class Insercao<DADO extends Comparable<DADO>> implements AlgoritmoDeOrdenacao<DADO> {
-    public int[] insercao(int[] array){
+public class Insercao  implements AlgoritmoDeOrdenacao{
+    public <DADO extends Comparable<DADO>> DADO[] insercao(DADO[] array){
         for (int i = 1; i < array.length; i++) {
-			int tmp = array[i]; 
+			DADO tmp = array[i];
             int j = i - 1;
 
-            while ((j >= 0) && (array[j] > tmp)) {
+            while ((j >= 0) && (array[j].compareTo(tmp) > 0)) {
                 array[j + 1] = array[j];
                 j--;
             }
         
-        array[j + 1] = tmp;
+            array[j + 1] = tmp;
         }
         
         return array;
     }
+
+    @Override
+    public <DADO extends Comparable<DADO>> void ordenar(DADO[] array)
+    {
+        insercao(array);
+    }
 }
-     
