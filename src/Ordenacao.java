@@ -52,8 +52,11 @@ public class Ordenacao
             array[i] = random.nextInt(this.quantidadeDeDados);
         }
 
-        System.out.println("Array gerado");
-        printArray();
+        if (Sort.print)
+        {
+            System.out.println("Array gerado");
+            printArray();
+        }
     }
 
     private void lerArray()
@@ -65,8 +68,11 @@ public class Ordenacao
                 "Entrada inválida\n\n");
         }
 
-        System.out.println("Array gerado");
-        printArray();
+        if (Sort.print)
+        {
+            System.out.println("Array gerado");
+            printArray();
+        }
     }
 
     public void printArray()

@@ -3,6 +3,8 @@ import algoritmos.*;
 import java.util.Scanner;
 
 public class Sort{
+    public static boolean print = true;
+
     public static AlgoritmoDeOrdenacao[] algoritmos = new AlgoritmoDeOrdenacao[]{
         new Insercao(),
         new Selecao(),
@@ -13,6 +15,14 @@ public class Sort{
         new Mergesort(),
         new Radixsort(),
     };
+
+    public static void lerArgumentos(String[] args)
+    {
+        for (int i = 0; i < args.length; i++)
+        {
+            if (args[i].equals("--noprint")) print = false;
+        }
+    }
 
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
