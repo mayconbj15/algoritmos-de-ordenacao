@@ -1,12 +1,17 @@
-package ordenacao.algoritmos;
+package algoritmos;
+
+import java.util.Arrays;
 
 /**
  * Classe que implementada o algoritmo de ordenação Radix sort
  * Implementação para inteiros
+ * <br><br>
+ * O algoritmo Radix sort funciona apenas para números inteiros e strings.
+ *
  * @author Maycon Bruno de Jesus
  */
 
-public class Radixsort{
+public class Radixsort implements AlgoritmoDeOrdenacao{
     // A function to do counting sort of arr[] according to
     // the digit represented by exp.
     public int[] countSort(int[] array, int exp){
@@ -67,4 +72,16 @@ public class Radixsort{
         return maior;
     }
 
+    @Override
+    public <DADO extends Comparable<DADO>> void ordenar(DADO[] array)
+    {
+        Integer[] newArray = (Integer[]) array;
+
+        int[] newIntArray =
+            Arrays.stream(newArray).mapToInt(Integer::intValue).toArray();
+
+        radixsort(newIntArray);
+
+        for (int i = 0; i < array.length; i++) newArray[i] = newIntArray[i];
+    }
 }

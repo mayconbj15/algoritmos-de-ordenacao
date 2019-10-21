@@ -1,5 +1,6 @@
 #para os arquivos compilados do programa principal
 *.class
+.\src\*.class
 
 #para os arquivos compilados dos algoritmos
-.\ordenacao\*.class
+.\src\algoritmos\*.class
