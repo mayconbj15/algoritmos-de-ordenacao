@@ -54,7 +54,7 @@ public class Ordenacao
 
         if (Sort.print)
         {
-            System.out.println("Array gerado");
+            System.out.println("\nArray gerado");
             printArray();
         }
     }
@@ -63,14 +63,14 @@ public class Ordenacao
     {
         for (int i = 0; i < array.length; i++)
         {
-            array[i] = IO.readint(
+            array[i] = IO.scanint(
                 "Informe o " + (i + 1) + "º número inteiro: ",
                 "Entrada inválida\n\n");
         }
 
         if (Sort.print)
         {
-            System.out.println("Array gerado");
+            System.out.println("\nArray gerado");
             printArray();
         }
     }
