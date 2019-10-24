@@ -55,7 +55,7 @@ public class QuicksortIterativo  implements AlgoritmoDeOrdenacao{
     	// Trocar a variável status é equivalente a uma chamada recursiva pois
     	// o quicksort sempre estará particionando a partição do status
     	Status<DADO> status = new Status<>(esq, dir);
-    	
+    	// Entrada problemática: 1 2 5 0 5 5 0
     	do
     	{
             // Checa se a participação não tem filhas à esquerda nem à direita
@@ -65,24 +65,25 @@ public class QuicksortIterativo  implements AlgoritmoDeOrdenacao{
                 // Adiciona as variáveis da partição na pilha
                 stack.add(status);
             }
-            
-            status.particoesFilhas++;
         	
-            if (status.particoesFilhas == 1 && status.esq < status.j) {
+            if (status.particoesFilhas == 0 && status.esq < status.j) {
             	status = new Status<>(status.esq, status.j);
             	continue;
             }
             
-            status.particoesFilhas++;
-            
-            if (status.particoesFilhas == 2 && status.i < status.dir) {
+            if (status.particoesFilhas == 1 && status.i < status.dir) {
             	status = new Status<>(status.i, status.dir);
             	continue;
             }
+            
             stack.remove(stack.size() - 1); // Remove o último status da pilha
             
             // Obtém o status no topo
-            if (!stack.isEmpty()) status = stack.get(stack.size() - 1);
+            if (!stack.isEmpty())
+            {
+            	status = stack.get(stack.size() - 1);
+            	status.particoesFilhas++;
+            }
             
     	} while (!stack.isEmpty());
 
