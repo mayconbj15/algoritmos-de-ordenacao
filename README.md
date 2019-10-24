@@ -27,7 +27,7 @@ Segue a série de comandos:
 powershell && REM Ignore esta linha caso esteja num sistema UNIX.
 git clone https://github.com/axell-brendow/algoritmos-de-ordenacao
 pushd algoritmos-de-ordenacao/src
-javac -classpath . Sort.java # Arquivo principal
-java -classpath . Sort
+javac Sort.java # Arquivo principal
+java Sort
 
 ```

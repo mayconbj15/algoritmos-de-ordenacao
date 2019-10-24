@@ -61,15 +61,15 @@ public class Ordenacao
 
     private void lerArray()
     {
-        for (int i = 0; i < array.length; i++)
-        {
-            array[i] = IO.scanint(
-                "Informe o " + (i + 1) + "º número inteiro: ",
-                "Entrada inválida\n\n");
-        }
-
         if (Sort.print)
         {
+            for (int i = 0; i < array.length; i++)
+            {
+                array[i] = IO.scanint(
+                    "Informe o " + (i + 1) + "º número inteiro: ",
+                    "Entrada inválida\n\n");
+            }
+
             System.out.println("\nArray gerado");
             printArray();
         }
@@ -77,14 +77,11 @@ public class Ordenacao
 
     public void printArray()
     {
-        if (Sort.print)
+    	for (int var : this.array)
         {
-            for (int var : this.array)
-            {
-                System.out.print(var + " ");
-            }
-            System.out.println("\n\n");
+            System.out.print(var + " ");
         }
+        System.out.println("\n\n");
     }
 
     private static long medirTempo(Runnable funcao)
@@ -96,7 +93,7 @@ public class Ordenacao
 
     /**
      * Método que irá ordenar o vetor de acordo com o tipo de algoritmo 
-     * passado no construtor
+     * passado no construtor.
      */
     public void ordenar(){
         long tempo = medirTempo( () -> array = algoritmo.ordenar(array) );
@@ -104,6 +101,6 @@ public class Ordenacao
         System.out.println(
             "Array ordenado pelo algoritmo " + nomeAlgoritmo + " (" + tempo + "ms)");
 
-        printArray();
+        if (Sort.print) printArray();
     }
 }
