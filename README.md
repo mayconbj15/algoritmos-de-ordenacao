@@ -25,7 +25,7 @@ Segue a série de comandos:
 
 ```shell script
 powershell && REM Ignore esta linha caso esteja num sistema UNIX.
-git clone https://github.com/axell-brendow/algoritmos-de-ordenacao
+git clone https://github.com/mayconbj15/algoritmos-de-ordenacao
 pushd algoritmos-de-ordenacao/src
 javac Sort.java # Arquivo principal
 java Sort
