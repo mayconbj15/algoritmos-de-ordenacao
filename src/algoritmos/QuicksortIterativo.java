@@ -12,11 +12,10 @@ import java.util.ArrayList;
 public class QuicksortIterativo  implements AlgoritmoDeOrdenacao{
 	
 	/**
-	 * Classe para guardar os valores relacionados a uma partição do Quicksort: i, j, esq, dir
-	 * 
-	 * @param <DADO> Qualquer tipo que implemente o compareTo() com sigo mesmo.
+	 * Classe para guardar os valores relacionados a uma partição do Quicksort:
+	 * i, j, esq, dir
 	 */
-	class Status<DADO extends Comparable<DADO>>
+	class Status
 	{
 		public int i, j, esq, dir;
 		/**
@@ -51,11 +50,11 @@ public class QuicksortIterativo  implements AlgoritmoDeOrdenacao{
      */
     private <DADO extends Comparable<DADO>> DADO[] quicksortIterativo(int esq, int dir, DADO[] array) {
         
-    	ArrayList<Status<DADO>> stack = new ArrayList<>();
+    	ArrayList<Status> stack = new ArrayList<>();
     	// Trocar a variável status é equivalente a uma chamada recursiva pois
     	// o quicksort sempre estará particionando a partição do status
-    	Status<DADO> status = new Status<>(esq, dir);
-    	// Entrada problemática: 1 2 5 0 5 5 0
+    	Status status = new Status(esq, dir);
+    	
     	do
     	{
             // Checa se a participação não tem filhas à esquerda nem à direita
@@ -67,12 +66,12 @@ public class QuicksortIterativo  implements AlgoritmoDeOrdenacao{
             }
         	
             if (status.particoesFilhas == 0 && status.esq < status.j) {
-            	status = new Status<>(status.esq, status.j);
+            	status = new Status(status.esq, status.j);
             	continue;
             }
             
-            if (status.particoesFilhas == 1 && status.i < status.dir) {
-            	status = new Status<>(status.i, status.dir);
+            if (status.particoesFilhas <= 1 && status.i < status.dir) {
+            	status = new Status(status.i, status.dir);
             	continue;
             }
             
@@ -96,7 +95,7 @@ public class QuicksortIterativo  implements AlgoritmoDeOrdenacao{
      * @param status Objeto com o estado da partição atual.
      * @param array Arranjo a ser ordenado.
      */
-    private <DADO extends Comparable<DADO>> void quicksortIterativo(Status<DADO> status, DADO[] array) {
+    private <DADO extends Comparable<DADO>> void quicksortIterativo(Status status, DADO[] array) {
         int i = status.esq, j = status.dir;
         DADO pivo = array[(status.dir + status.esq)/2]; //pega a posição do pivo
 
