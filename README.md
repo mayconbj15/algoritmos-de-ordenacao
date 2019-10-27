@@ -6,7 +6,8 @@ Neste repositório coloco todos os algoritmos de ordenação que fiz durante a d
 - Inserção
 - Shellsort
 - Heapsort
-- Quicksort
+- Quicksort Recursivo
+- Quicksort Iterativo
 - Bubble sort
 - Merge sort
 - Radix sort
