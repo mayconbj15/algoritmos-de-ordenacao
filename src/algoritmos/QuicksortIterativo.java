@@ -15,7 +15,7 @@ public class QuicksortIterativo  implements AlgoritmoDeOrdenacao{
 	 * Classe para guardar os valores relacionados a uma partição do Quicksort:
 	 * i, j, esq, dir
 	 */
-	class Status
+	class Particao
 	{
 		public int i, j, esq, dir;
 		/**
@@ -24,7 +24,7 @@ public class QuicksortIterativo  implements AlgoritmoDeOrdenacao{
 		 */
 		int particoesFilhas;
 		
-		public Status(int i, int j, int esq, int dir, int particoesFilhas)
+		public Particao(int i, int j, int esq, int dir, int particoesFilhas)
 		{
 			this.i = i;
 			this.j = j;
@@ -33,7 +33,7 @@ public class QuicksortIterativo  implements AlgoritmoDeOrdenacao{
 			this.particoesFilhas = particoesFilhas;
 		}
 		
-		public Status(int esq, int dir) { this(-1, -1, esq, dir, 0); }
+		public Particao(int esq, int dir) { this(-1, -1, esq, dir, 0); }
 	}
 	
     /**
@@ -50,38 +50,38 @@ public class QuicksortIterativo  implements AlgoritmoDeOrdenacao{
      */
     private <DADO extends Comparable<DADO>> DADO[] quicksortIterativo(int esq, int dir, DADO[] array) {
         
-    	ArrayList<Status> stack = new ArrayList<>();
-    	// Trocar a variável status é equivalente a uma chamada recursiva pois
-    	// o quicksort sempre estará particionando a partição do status
-    	Status status = new Status(esq, dir);
+    	ArrayList<Particao> stack = new ArrayList<>();
+    	// Trocar a variável particao é equivalente a uma chamada recursiva pois
+    	// o quicksort sempre estará particionando a partição dessa variável
+    	Particao particao = new Particao(esq, dir);
     	
     	do
     	{
             // Checa se a participação não tem filhas à esquerda nem à direita
-        	if (status.particoesFilhas == 0)
+        	if (particao.particoesFilhas == 0)
             {
-                quicksortIterativo(status, array); // Particiona de esq a dir com base no pivo
-                // Adiciona as variáveis da partição na pilha
-                stack.add(status);
+                quicksortIterativo(particao, array); // Particiona de esq a dir com base no pivo
+                stack.add(particao); // Adiciona a partição na pilha
             }
         	
-            if (status.particoesFilhas == 0 && status.esq < status.j) {
-            	status = new Status(status.esq, status.j);
+            if (particao.particoesFilhas == 0 && particao.esq < particao.j) {
+            	particao = new Particao(particao.esq, particao.j);
             	continue;
             }
             
-            if (status.particoesFilhas <= 1 && status.i < status.dir) {
-            	status = new Status(status.i, status.dir);
+            if (particao.particoesFilhas <= 1 && particao.i < particao.dir) {
+            	particao = new Particao(particao.i, particao.dir);
             	continue;
             }
             
-            stack.remove(stack.size() - 1); // Remove o último status da pilha
+            stack.remove(stack.size() - 1); // Remove a última partição da pilha
             
-            // Obtém o status no topo
             if (!stack.isEmpty())
             {
-            	status = stack.get(stack.size() - 1);
-            	status.particoesFilhas++;
+            	particao = stack.get(stack.size() - 1); // Obtém a partição do topo
+            	// Uma partição é recuperada do topo quando a "recursividade"
+            	// volta nela. Isso significa que uma partição filha foi ordenada.
+            	particao.particoesFilhas++;
             }
             
     	} while (!stack.isEmpty());
@@ -90,14 +90,14 @@ public class QuicksortIterativo  implements AlgoritmoDeOrdenacao{
     }
 
     /**
-     * Faz o particionamento da parte indica no status.
+     * Faz o particionamento da partição recebida.
      * 
-     * @param status Objeto com o estado da partição atual.
+     * @param particao Objeto com o estado da partição atual.
      * @param array Arranjo a ser ordenado.
      */
-    private <DADO extends Comparable<DADO>> void quicksortIterativo(Status status, DADO[] array) {
-        int i = status.esq, j = status.dir;
-        DADO pivo = array[(status.dir + status.esq)/2]; //pega a posição do pivo
+    private <DADO extends Comparable<DADO>> void quicksortIterativo(Particao particao, DADO[] array) {
+        int i = particao.esq, j = particao.dir;
+        DADO pivo = array[(particao.dir + particao.esq)/2]; //pega a posição do pivo
 
         while (i <= j) {
             while (array[i].compareTo(pivo) < 0){
@@ -115,8 +115,8 @@ public class QuicksortIterativo  implements AlgoritmoDeOrdenacao{
             }
         }
         
-        status.i = i;
-        status.j = j;
+        particao.i = i;
+        particao.j = j;
     }
 
     public <DADO extends Comparable<DADO>> void swap(int i, int j, DADO[] array) {
