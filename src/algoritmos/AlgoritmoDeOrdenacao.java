@@ -114,90 +114,90 @@ public interface AlgoritmoDeOrdenacao
     // O problema disso é que o Radixsort deixaria de poder ordenar arranjos
     // do tipo char[] byte[] e short[].
 
-//    default byte[] ordenar(byte[] array)
-//    {
-//        Byte[] newArray = new Byte[array.length];
-//        byte[] sortedArray = new byte[array.length];
-//
-//        for (int i = 0; i < array.length; i++) newArray[i] = array[i];
-//
-//        ordenar(newArray);
-//
-//        for (int i = 0; i < array.length; i++)
-//            sortedArray[i] = newArray[i];
-//
-//        return sortedArray;
-//    }
-//
-//    default short[] ordenar(short[] array)
-//    {
-//        Short[] newArray = new Short[array.length];
-//        short[] sortedArray = new short[array.length];
-//
-//        for (int i = 0; i < array.length; i++) newArray[i] = array[i];
-//
-//        ordenar(newArray);
-//
-//        for (int i = 0; i < array.length; i++)
-//            sortedArray[i] = newArray[i];
-//
-//        return sortedArray;
-//    }
-//
-//    default int[] ordenar(int[] array)
-//    {
-//        // Cria um fluxo de ints embrulhados como Integer e cria um Integer[] disso.
-//        Integer[] newArray = Arrays.stream(array).boxed().toArray(Integer[]::new);
-//        ordenar(newArray);
-//
-//        // Cria um fluxo de Integers e mapeia-os para int chamando o método
-//        // intValue de cada um. Gera um int[] disso.
-//        int[] sortedArray =
-//            Arrays.stream(newArray).mapToInt(Integer::intValue).toArray();
-//
-//        return sortedArray;
-//    }
-//
-//    default long[] ordenar(long[] array)
-//    {
-//        // Cria um fluxo de longs embrulhados como Long e cria um Long[] disso.
-//        Long[] newArray = Arrays.stream(array).boxed().toArray(Long[]::new);
-//        ordenar(newArray);
-//
-//        // Cria um fluxo de Longs e mapeia-os para long chamando o método
-//        // longValue de cada um. Gera um long[] disso.
-//        long[] sortedArray =
-//            Arrays.stream(newArray).mapToLong(Long::longValue).toArray();
-//
-//        return sortedArray;
-//    }
-//
-//    default float[] ordenar(float[] array)
-//    {
-//        Float[] newArray = new Float[array.length];
-//        float[] sortedArray = new float[array.length];
-//
-//        for (int i = 0; i < array.length; i++) newArray[i] = array[i];
-//
-//        ordenar(newArray);
-//
-//        for (int i = 0; i < array.length; i++)
-//            sortedArray[i] = newArray[i];
-//
-//        return sortedArray;
-//    }
-//
-//    default double[] ordenar(double[] array)
-//    {
-//        // Cria um fluxo de doubles embrulhados como Double e cria um Double[] disso.
-//        Double[] newArray = Arrays.stream(array).boxed().toArray(Double[]::new);
-//        ordenar(newArray);
-//
-//        // Cria um fluxo de Doubles e mapeia-os para double chamando o método
-//        // doubleValue de cada um. Gera um double[] disso.
-//        double[] sortedArray =
-//            Arrays.stream(newArray).mapToDouble(Double::doubleValue).toArray();
-//
-//        return sortedArray;
-//    }
+    /*default byte[] ordenar(byte[] array)
+    {
+        Byte[] newArray = new Byte[array.length];
+        byte[] sortedArray = new byte[array.length];
+
+        for (int i = 0; i < array.length; i++) newArray[i] = array[i];
+
+        ordenar(newArray);
+
+        for (int i = 0; i < array.length; i++)
+            sortedArray[i] = newArray[i];
+
+        return sortedArray;
+    }
+
+    default short[] ordenar(short[] array)
+    {
+        Short[] newArray = new Short[array.length];
+        short[] sortedArray = new short[array.length];
+
+        for (int i = 0; i < array.length; i++) newArray[i] = array[i];
+
+        ordenar(newArray);
+
+        for (int i = 0; i < array.length; i++)
+            sortedArray[i] = newArray[i];
+
+        return sortedArray;
+    }
+
+    default int[] ordenar(int[] array)
+    {
+        // Cria um fluxo de ints embrulhados como Integer e cria um Integer[] disso.
+        Integer[] newArray = Arrays.stream(array).boxed().toArray(Integer[]::new);
+        ordenar(newArray);
+
+        // Cria um fluxo de Integers e mapeia-os para int chamando o método
+        // intValue de cada um. Gera um int[] disso.
+        int[] sortedArray =
+            Arrays.stream(newArray).mapToInt(Integer::intValue).toArray();
+
+        return sortedArray;
+    }
+
+    default long[] ordenar(long[] array)
+    {
+        // Cria um fluxo de longs embrulhados como Long e cria um Long[] disso.
+        Long[] newArray = Arrays.stream(array).boxed().toArray(Long[]::new);
+        ordenar(newArray);
+
+        // Cria um fluxo de Longs e mapeia-os para long chamando o método
+        // longValue de cada um. Gera um long[] disso.
+        long[] sortedArray =
+            Arrays.stream(newArray).mapToLong(Long::longValue).toArray();
+
+        return sortedArray;
+    }
+
+    default float[] ordenar(float[] array)
+    {
+        Float[] newArray = new Float[array.length];
+        float[] sortedArray = new float[array.length];
+
+        for (int i = 0; i < array.length; i++) newArray[i] = array[i];
+
+        ordenar(newArray);
+
+        for (int i = 0; i < array.length; i++)
+            sortedArray[i] = newArray[i];
+
+        return sortedArray;
+    }
+
+    default double[] ordenar(double[] array)
+    {
+        // Cria um fluxo de doubles embrulhados como Double e cria um Double[] disso.
+        Double[] newArray = Arrays.stream(array).boxed().toArray(Double[]::new);
+        ordenar(newArray);
+
+        // Cria um fluxo de Doubles e mapeia-os para double chamando o método
+        // doubleValue de cada um. Gera um double[] disso.
+        double[] sortedArray =
+            Arrays.stream(newArray).mapToDouble(Double::doubleValue).toArray();
+
+        return sortedArray;
+    }*/
 }

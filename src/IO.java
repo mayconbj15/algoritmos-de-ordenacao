@@ -1,10 +1,12 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class IO
 {
     public static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    public static Scanner scan = new Scanner(System.in);
     private static boolean inputError;
 
     public static boolean hasError() { return inputError; }
@@ -70,6 +72,22 @@ public class IO
         do
         {
             value = readint(msg);
+
+            if (hasError()) print(errorMsg);
+
+        } while (hasError());
+
+        return value;
+    }
+
+    public static int scanint(Object msg, Object errorMsg)
+    {
+        int value;
+
+        do
+        {
+            print(msg);
+            value = scan.nextInt();
 
             if (hasError()) print(errorMsg);
 

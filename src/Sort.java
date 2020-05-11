@@ -10,7 +10,8 @@ public class Sort{
         new Selecao(),
         new Shellsort(),
         new Heapsort(),
-        new Quicksort(),
+        new QuicksortRecursivo(),
+        new QuicksortIterativo(),
         new Bubblesort(),
         new Mergesort(),
         new Radixsort(),
@@ -40,10 +41,11 @@ public class Sort{
                             "2 - Seleção\n" +
                             "3 - Shellsort\n" + 
                             "4 - Heapsort\n" + 
-                            "5 - Quicksort\n" +                           
-                            "6 - Bubble sort\n" +
-                            "7 - Merge sort\n" +
-                            "8 - Radix sort\n");
+                            "5 - Quicksort Recursivo\n" +
+                            "6 - Quicksort Iterativo\n" +                           
+                            "7 - Bubble sort\n" +
+                            "8 - Merge sort\n" +
+                            "9 - Radix sort\n");
         tipoAlgoritmo = input.nextInt();
 
         System.out.println("Como deseja gerar os dados?\n");

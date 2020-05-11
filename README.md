@@ -6,7 +6,8 @@ Neste repositório coloco todos os algoritmos de ordenação que fiz durante a d
 - Inserção
 - Shellsort
 - Heapsort
-- Quicksort
+- Quicksort Recursivo
+- Quicksort Iterativo
 - Bubble sort
 - Merge sort
 - Radix sort
@@ -24,10 +25,10 @@ Se quiser ajudar fique a vontade para abrir uma Issue.
 Segue a série de comandos:
 
 ```shell script
-powershell && REM Ignore esta linha caso esteja num sistema UNIX.
+powershell && REM Ignore essa linha caso esteja num sistema UNIX.
 git clone https://github.com/axell-brendow/algoritmos-de-ordenacao
 pushd algoritmos-de-ordenacao/src
-javac -classpath . Sort.java # Arquivo principal
-java -classpath . Sort
+javac Sort.java # Arquivo principal
+java Sort
 
 ```

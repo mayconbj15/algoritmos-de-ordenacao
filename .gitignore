@@ -4,3 +4,4 @@
 
 #para os arquivos compilados dos algoritmos
 .\src\algoritmos\*.class
+/bin/
